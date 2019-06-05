@@ -9,12 +9,12 @@ from utils.util import Utils
 def index(filePath):
     return static_file(filePath, root='./static')
 
-@bottle.route('/add', method=['POST','GET'])
+@bottle.route('/', method=['POST','GET'])
 def add():
     view = ""
     registId = ""
     form = {}
-    kind = "登録"
+    kind = "入力"
     # GETされた場合
     if request.method == 'GET':
         # TODO: id指定された場合
