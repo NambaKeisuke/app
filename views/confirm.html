@@ -15,8 +15,8 @@
         <input type="hidden" value="{{registId}}" name="id" />
     {% endif %}
     <div class="container">
-        <h3>登録情報の確認</h3>
-        <p>登録内容を確認して下さい</p>
+        <h3>入力情報の確認</h3>
+        <p>入力された内容</p>
         <div class="row">
             <div class="col-md-6">
                 <table class="table table-bordered">
@@ -33,8 +33,42 @@
                 </table>
             </div>
         </div>
+        <div class="container">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>ワイン</th>
+                      <th>情報A</th>
+                      <th>情報B</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                        <td>a</td>
+                        <td>あああ</td>
+                        <td>ほげ</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                        <td>b</td>
+                        <td>いいいい</td>
+                        <td>はげ</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                        <td>c</td>
+                        <td>うう</td>
+                        <td>ひげ</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+    
         <button class="btn btn-secondary" name="next" value="back">戻る</button>
-        <button class="btn btn-primary" name="next" value="regist">登録</button>
+        <button class="btn btn-primary" name="next" value="regist">実行</button>
     </div>
 </form>
 {% endblock %}

@@ -14,7 +14,8 @@ def add():
     view = ""
     registId = ""
     form = {}
-    kind = "登録"
+    kind = "入力"
+    data = ["かなり弱めの方がいい　", "少し弱めの方がいい　", "ちょうどいい　", "少し強めの方がいい　", "かなり強めの方がいい"]
     # GETされた場合
     if request.method == 'GET':
         # TODO: id指定された場合
@@ -23,7 +24,8 @@ def add():
         return template('add.html'
                 , form = form
                 , kind=kind
-                , registId=registId)
+                , registId=registId
+                , data=data)
  
     # POSTされた場合
     if request.method == 'POST':
@@ -49,10 +51,11 @@ def add():
             return template('add.html'
                     , form=form
                     , kind=kind
-                    , registId=registId)
+                    , registId=registId
+                    , data=data)
  
         if not errorMsg:
-            headers = ['著書名', '巻数', '著作者', '出版社', 'メモ']
+            headers = ['ワインの甘さ', 'ワインの辛さ', 'ワインの酸っぱさ', 'ワインの香り', 'メモ']
             return template('confirm.html'
                     , form=form
                     , headers=headers
@@ -62,7 +65,8 @@ def add():
                     , error=errorMsg
                     , kind=kind
                     , form=form
-                    , registId=registId)
+                    , registId=registId
+                    , data=data)
  
 if __name__ == '__main__':
     run(port=8080, reloader=True, debug=True)

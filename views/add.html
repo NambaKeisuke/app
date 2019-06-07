@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-<title>書籍情報の{{kind}}</title>
+<title>ワイン情報の{{kind}}</title>
 {% endblock %}
 {% block content %}
 <form action="add" method="POST">
@@ -8,25 +8,41 @@
         <input type="hidden" value="{{registId}}" name="id"/>
     {% endif %}
     <div class="container">
-        <h3>書籍情報の{{kind}}</h3>
-        <p>書籍情報を{{kind}}します。</p>
+        <h3>ワイン情報の{{kind}}</h3>
+        <p>先程飲んだワインについて{{kind}}してください。</p>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>書名</label>
-                    <input class="form-control" type="text" placeholder="例：燃えよ剣" name="name" value="{% if form['name'] %}{{form['name']}}{% endif %}"/>
+                    <label>ワインの甘さ</label>
+                    <div class="form-inline">
+                        {% for i in data %}
+                            <input class="form-control" type="radio" name="name" value="{{i}}"/><b>{{i}}</b>
+                        {% endfor %}
+                    </div>                         
                 </div>
                 <div class="form-group">
-                    <label>巻数</label>
-                    <input class="form-control" type="text" placeholder="例：上巻" name="volume" value="{% if form['volume'] %}{{form['volume']}}{% endif %}"/>
+                    <label>ワインの辛さ</label>
+                    <div class="form-inline">
+                        {% for i in data %}
+                            <input class="form-control" type="radio" name="volume" value="{{i}}"/><b>{{i}}</b>
+                        {% endfor %}               
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>著者</label>
-                    <input class="form-control" type="text" placeholder="例：司馬遼太郎" name="author" value="{% if form['author'] %}{{form['author']}}{% endif %}"/>
+                    <label>ワインの酸っぱさ</label>
+                    <div class="form-inline">
+                        {% for i in data %}
+                            <input class="form-control" type="radio" name="author" value="{{i}}"/><b>{{i}}</b>
+                        {% endfor %}               
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>出版社</label>
-                    <input class="form-control" type="text" placeholder="例：新潮社" name="publisher" value="{% if form['publisher'] %}{{form['publisher']}}{% endif %}"/>
+                    <label>ワインの香り</label>
+                    <div class="form-inline">
+                        {% for i in data %}
+                            <input class="form-control" type="radio" name="publisher" value="{{i}}"/><b>{{i}}</b>
+                        {% endfor %}               
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>メモ</label>
