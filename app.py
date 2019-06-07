@@ -9,7 +9,7 @@ from utils.util import Utils
 def index(filePath):
     return static_file(filePath, root='./static')
 
-@bottle.route('/', method=['POST','GET'])
+@bottle.route('/add', method=['POST','GET'])
 def add():
     view = ""
     registId = ""
