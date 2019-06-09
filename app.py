@@ -5,9 +5,9 @@ from utils.util import Utils
  
 #app = routes.app
 
-@bottle.get('/static/<filePath:path>')
-def index(filePath):
-    return static_file(filePath, root='./static')
+#@bottle.get('/static/<filePath:path>')
+#def index(filePath):
+#    return static_file(filePath, root='./static')
 
 @bottle.route('/add', method=['POST','GET'])
 def add():
