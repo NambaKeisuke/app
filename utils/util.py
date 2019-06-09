@@ -11,5 +11,5 @@ class Utils():
         if not data['author']:
             errMsg.append('酸っぱさ' + noInput)
         if not data['publisher']:
-            errMsg.append('酸っぱさ' + noInput)
+            errMsg.append('香り' + noInput)
         return errMsg
