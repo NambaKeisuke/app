@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>ワインの甘さ</label>
+                    <label>ワインの重み（軽やか - 濃厚）</label>
                     <div class="form-inline">
                         {% for i in data %}
                             <input class="form-control" type="radio" name="name" value="{{i}}"/><b>{{i}}</b>
@@ -21,7 +21,7 @@
                     </div>                         
                 </div>
                 <div class="form-group">
-                    <label>ワインの辛さ</label>
+                    <label>ワインの果実味（スパイシー - フルーティ）</label>
                     <div class="form-inline">
                         {% for i in data %}
                             <input class="form-control" type="radio" name="volume" value="{{i}}"/><b>{{i}}</b>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>ワインの酸っぱさ</label>
+                    <label>ワインの酸味（まろやか - シャープ）</label>
                     <div class="form-inline">
                         {% for i in data %}
                             <input class="form-control" type="radio" name="author" value="{{i}}"/><b>{{i}}</b>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>ワインの香り</label>
+                    <label>ワインの辛み（甘い - 辛い）</label>
                     <div class="form-inline">
                         {% for i in data %}
                             <input class="form-control" type="radio" name="publisher" value="{{i}}"/><b>{{i}}</b>

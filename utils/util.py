@@ -5,11 +5,11 @@ class Utils():
         errMsg = []
         noInput = 'が未入力です。'
         if not data['name']:
-            errMsg.append('甘さ' + noInput)
+            errMsg.append('重み' + noInput)
         if not data['volume']:
-            errMsg.append('辛さ' + noInput)
+            errMsg.append('果実味' + noInput)
         if not data['author']:
-            errMsg.append('酸っぱさ' + noInput)
+            errMsg.append('酸味' + noInput)
         if not data['publisher']:
-            errMsg.append('香り' + noInput)
+            errMsg.append('辛み' + noInput)
         return errMsg

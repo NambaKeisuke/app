@@ -15,7 +15,7 @@ def add():
     registId = ""
     form = {}
     kind = "入力"
-    data = ["かなり弱めの方がいい　", "少し弱めの方がいい　", "ちょうどいい　", "少し強めの方がいい　", "かなり強めの方がいい"]
+    data = ["1　", "2　", "3　", "4　", "5　"]
 
     # GETされた場合
     if request.method == 'GET':
@@ -56,7 +56,7 @@ def add():
                     , data=data)
  
         if not errorMsg:
-            headers = ['ワインの甘さ', 'ワインの辛さ', 'ワインの酸っぱさ', 'ワインの香り', 'メモ']
+            headers = ['重み（軽やか - 濃厚）', '果実味（スパイシー - フルーティ）', '酸味（まろやか - シャープ）', '辛み（甘い - 辛い）', 'メモ']
             return template('confirm.html'
                     , form=form
                     , headers=headers
@@ -70,5 +70,4 @@ def add():
                     , data=data)
  
 if __name__ == '__main__':
-    run()
-#    run(port=8080, reloader=True, debug=True)
+    run(port=8080, reloader=True, debug=True)
