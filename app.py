@@ -9,7 +9,7 @@ from utils.util import Utils
 #def index(filePath):
 #    return static_file(filePath, root='./static')
 
-@route('/', method=['POST','GET'])
+@route('/add', method=['POST','GET'])
 def add():
     view = ""
     registId = ""
@@ -70,4 +70,5 @@ def add():
                     , data=data)
  
 if __name__ == '__main__':
-    run(port=8080, reloader=True, debug=True)
+    run()
+#    run(port=8080, reloader=True, debug=True)
