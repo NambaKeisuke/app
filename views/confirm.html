@@ -6,10 +6,10 @@
  
 {% block content %}
 <form action="regist" method="POST">
-    <input type="hidden" value="{{form['name']}}" name="name" />
-    <input type="hidden" value="{{form['volume']}}" name="volume" />
-    <input type="hidden" value="{{form['author']}}" name="author" />
-    <input type="hidden" value="{{form['publisher']}}" name="publisher" />
+    <input type="hidden" value="{{form['weight']}}" name="weight" />
+    <input type="hidden" value="{{form['fruity']}}" name="fruity" />
+    <input type="hidden" value="{{form['acidity']}}" name="acidity" />
+    <input type="hidden" value="{{form['spicy']}}" name="spicy" />
     <input type="hidden" value="{{form['memo']}}" name="memo" />
     {% if registId %}
         <input type="hidden" value="{{registId}}" name="id" />
@@ -33,34 +33,45 @@
                 </table>
             </div>
         </div>
+        <br>
+        <h3>あなたにおすすめのワイン</h3>
         <div class="container">
+            
                 <table class="table">
                   <thead>
                     <tr>
                       <th>#</th>
                       <th>ワイン</th>
-                      <th>情報A</th>
-                      <th>情報B</th>
+                      <th>色</th>
+                      <th>品種</th>
+                      <th>産地国</th>
+                      <th>組み合わせたい食べ物</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                        <td>a</td>
-                        <td>あああ</td>
-                        <td>ほげ</td>
+                        <td>{{df.loc[0]['name_kana']}}</td>
+                        <td>{{df.loc[0]['color']}}</td>
+                        <td>{{df.loc[0]['kind']}}</td>
+                        <td>{{df.loc[0]['country']}}</td>
+                        <td>{{df.loc[0]['食べ物']}}</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                        <td>b</td>
-                        <td>いいいい</td>
-                        <td>はげ</td>
+                      <td>{{df.loc[1]['name_kana']}}</td>
+                      <td>{{df.loc[1]['color']}}</td>
+                      <td>{{df.loc[1]['kind']}}</td>
+                      <td>{{df.loc[1]['country']}}</td>
+                      <td>{{df.loc[1]['食べ物']}}</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                        <td>c</td>
-                        <td>うう</td>
-                        <td>ひげ</td>
+                      <td>{{df.loc[2]['name_kana']}}</td>
+                      <td>{{df.loc[2]['color']}}</td>
+                      <td>{{df.loc[2]['kind']}}</td>
+                      <td>{{df.loc[2]['country']}}</td>
+                      <td>{{df.loc[2]['食べ物']}}</td>
                     </tr>
                   </tbody>
                 </table>

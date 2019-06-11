@@ -9,14 +9,31 @@
     {% endif %}
     <div class="container">
         <h3>ワイン情報の{{kind}}</h3>
-        <p>先程飲んだワインについて{{kind}}してください。</p>
+        <p>飲んだワインを{{kind}}してください。</p>
+            <div class="form-group">
+                <div class="form-inline">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          --ワイン名を入力(未実装)--
+                        </button>
+                        <div class="dropdown show">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" href="#">メニュー1</a>
+                                <a class="dropdown-item" href="#">メニュー2</a>
+                                <a class="dropdown-item" href="#">メニュー3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <p>飲んだワインをもとに、あなたが今飲みたいワインを{{kind}}してください。</p>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>ワインの重み（軽やか - 濃厚）</label>
                     <div class="form-inline">
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="name" value="{{i}}"/><b>{{i}}</b>
+                            <input class="form-control" type="radio" name="weight" value="{{i}}"/><b>{{i+3}}</b>
                         {% endfor %}
                     </div>                         
                 </div>
@@ -24,7 +41,7 @@
                     <label>ワインの果実味（スパイシー - フルーティ）</label>
                     <div class="form-inline">
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="volume" value="{{i}}"/><b>{{i}}</b>
+                            <input class="form-control" type="radio" name="fruity" value="{{i}}"/><b>{{i+3}}</b>
                         {% endfor %}               
                     </div>
                 </div>
@@ -32,7 +49,7 @@
                     <label>ワインの酸味（まろやか - シャープ）</label>
                     <div class="form-inline">
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="author" value="{{i}}"/><b>{{i}}</b>
+                            <input class="form-control" type="radio" name="acidity" value="{{i}}"/><b>{{i+3}}</b>
                         {% endfor %}               
                     </div>
                 </div>
@@ -40,7 +57,7 @@
                     <label>ワインの辛み（甘い - 辛い）</label>
                     <div class="form-inline">
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="publisher" value="{{i}}"/><b>{{i}}</b>
+                            <input class="form-control" type="radio" name="spicy" value="{{i}}"/><b>{{i+3}}</b>
                         {% endfor %}               
                     </div>
                 </div>
