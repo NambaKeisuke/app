@@ -9,12 +9,12 @@
     {% endif %}
     <div class="container">
         <h3>ワイン情報の{{kind}}</h3>
-        <p>飲んだワインを{{kind}}してください。</p>
+        <b>飲んだワインを{{kind}}してください。</b>
             <div class="form-group">
                 <div class="form-inline">
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          --ワイン名を入力(未実装)--
+                          --ワイン名を入力--
                         </button>
                         <div class="dropdown show">
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -25,40 +25,54 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        <p>飲んだワインをもとに、あなたが今飲みたいワインを{{kind}}してください。</p>
+                <b>このワインを飲んだ感想はどうでしたか。評価を{{kind}}してください。</b>
+                <div class="form-inline">
+                    {% for i in data %}
+                        <input class="form-control" type="radio" name="evaluation" value="{{i}}"/><b>{{i+3}}　</b>
+                    {% endfor %}
+                </div>
+                <br>
+        <b>飲んだワインをもとに、あなたが今飲みたいワインを{{kind}}してください。</b>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>ワインの重み（軽やか - 濃厚）</label>
+                    <label>ワインの重み</label>
                     <div class="form-inline">
+                        <b>軽やか　</b>
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="weight" value="{{i}}"/><b>{{i+3}}</b>
+                            <input class="form-control" type="radio" name="weight" value="{{i}}"/><b>{{i+3}}　</b>
                         {% endfor %}
+                        <b>濃厚</b>
                     </div>                         
                 </div>
                 <div class="form-group">
-                    <label>ワインの果実味（スパイシー - フルーティ）</label>
+                    <label>ワインの果実味</label>
                     <div class="form-inline">
+                        <b>スパイシー　</b>
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="fruity" value="{{i}}"/><b>{{i+3}}</b>
-                        {% endfor %}               
+                            <input class="form-control" type="radio" name="fruity" value="{{i}}"/><b>{{i+3}}　</b>
+                        {% endfor %} 
+                        <b>フルーティ</b>              
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>ワインの酸味（まろやか - シャープ）</label>
+                    <label>ワインの酸味</label>
                     <div class="form-inline">
+                        <b>まろやか　</b>
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="acidity" value="{{i}}"/><b>{{i+3}}</b>
-                        {% endfor %}               
+                            <input class="form-control" type="radio" name="acidity" value="{{i}}"/><b>{{i+3}}　</b>
+                        {% endfor %}
+                        <b>シャープ</b>               
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>ワインの辛み（甘い - 辛い）</label>
+                    <label>ワインの辛み</label>
                     <div class="form-inline">
+                        <b>甘い　</b>
                         {% for i in data %}
-                            <input class="form-control" type="radio" name="spicy" value="{{i}}"/><b>{{i+3}}</b>
-                        {% endfor %}               
+                            <input class="form-control" type="radio" name="spicy" value="{{i}}"/><b>{{i+3}}　</b>
+                        {% endfor %}
+                        <b>辛い</b>               
                     </div>
                 </div>
                 <div class="form-group">

@@ -42,6 +42,7 @@ def add():
     # POSTされた場合
     if request.method == 'POST':
         # POST値の取得
+        form['evaluation'] = request.forms.decode().get('evaluation')
         form['weight'] = request.forms.decode().get('weight')
         form['fruity'] = request.forms.decode().get('fruity')
         form['acidity'] = request.forms.decode().get('acidity')
